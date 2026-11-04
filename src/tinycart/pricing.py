@@ -18,7 +18,7 @@ def find_coupon(code: str) -> Coupon | None:
 
 def line_total(price: Decimal, qty: int) -> Decimal:
     total = price * qty
-    if qty > BULK_MIN_QTY:
+    if qty >= BULK_MIN_QTY:
         total = total * Decimal("0.9")
     return total
 
