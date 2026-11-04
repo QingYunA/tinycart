@@ -1,0 +1,6 @@
+[
+  {"name": "single",        "cart": [{"price": "10.00", "qty": 1}], "coupon": null,     "expect": "TOTAL 10.00", "code": 0},
+  {"name": "bulk_at_3",     "cart": [{"price": "10.00", "qty": 3}], "coupon": null,     "expect": "TOTAL 27.00", "code": 0},
+  {"name": "bulk_plus_vip", "cart": [{"price": "10.00", "qty": 4}], "coupon": "VIP20",  "expect": "TOTAL 28.80", "code": 0},
+  {"name": "bad_coupon",    "cart": [{"price": "10.00", "qty": 1}], "coupon": "NOPE",   "expect": "unknown coupon", "code": 2}
+]

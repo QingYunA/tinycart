@@ -1,5 +1,7 @@
 from decimal import Decimal
 
+import pytest
+
 from tinycart.pricing import cart_total
 
 
@@ -12,7 +14,5 @@ def test_coupon_save10():
 
 
 def test_unknown_coupon_is_rejected():
-    import pytest
-
     with pytest.raises(ValueError, match="unknown coupon"):
         cart_total([(Decimal("10.00"), 1)], "NOPE")
