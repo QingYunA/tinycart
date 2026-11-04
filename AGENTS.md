@@ -17,6 +17,7 @@ A tiny cart-total CLI. Money is `Decimal`, always.
 | Rule | Enforced by |
 | --- | --- |
 | Handle `None` from lookups | ty (`unresolved-attribute`) |
+| No `float()` in money code; JSON money is a string | `tests/test_guards.py` |
 | Bug fix = failing test first | PR template + review |
 
 ## Do not

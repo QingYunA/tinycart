@@ -17,7 +17,7 @@ def main() -> None:
     try:
         total = cart_total(items, args.coupon)
         if args.json:
-            print(json.dumps({"total": float(total)}))
+            print(json.dumps({"total": str(total)}))
         else:
             print(f"TOTAL {total}")
     except ValueError as e:
