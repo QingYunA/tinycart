@@ -27,5 +27,7 @@ def cart_total(items: list[tuple[Decimal, int]], coupon_code: str | None = None)
     subtotal = sum((line_total(p, q) for p, q in items), Decimal("0"))
     if coupon_code:
         coupon = find_coupon(coupon_code)
+        if coupon is None:
+            raise ValueError(f"unknown coupon: {coupon_code}")
         subtotal = subtotal * (100 - coupon.percent) / 100
     return subtotal.quantize(Decimal("0.01"))

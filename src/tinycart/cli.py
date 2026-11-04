@@ -13,7 +13,10 @@ def main() -> None:
     with open(args.cart) as f:
         raw = json.load(f)
     items = [(Decimal(i["price"]), int(i["qty"])) for i in raw]
-    print(f"TOTAL {cart_total(items, args.coupon)}")
+    try:
+        print(f"TOTAL {cart_total(items, args.coupon)}")
+    except ValueError as e:
+        parser.exit(2, f"error: {e}\n")
 
 
 if __name__ == "__main__":
